@@ -47,4 +47,9 @@ public class ChecklistController {
 	    		.body(questionsList);
 		return responseEntity;
 	}
+	
+	@GetMapping("/health")
+	public ResponseEntity<?> getHealthCheck() {
+		return ResponseEntity.ok().body("ok");
+	}
 }
