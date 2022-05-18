@@ -16,6 +16,7 @@ import com.audit.checklist.model.Question;
 import com.audit.checklist.service.ChecklistService;
 
 @RestController
+@CrossOrigin
 public class ChecklistController {
 
 	@Autowired
@@ -24,8 +25,6 @@ public class ChecklistController {
 	@Autowired
 	TokenService tokenService;
 
-
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/AuditCheckListQuestions/{auditType}")
 	public ResponseEntity<?> getAuditCheckListQuestions(@RequestHeader(value = "Authorization", required = true) String token,
 														@PathVariable String auditType) {
